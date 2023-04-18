@@ -1,3 +1,9 @@
+'''
+Authored:
+Referenced work: FastAPI course
+Date:
+'''
+
 import subprocess
 
 def ping_ip(ipAddr):
