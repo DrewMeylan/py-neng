@@ -8,13 +8,9 @@ import subprocess
 import argparse
 
 #Argument Definition
-parser = argparse.ArgumentParser(description="Define IP address, ping count")
-parser.add_argument('-i', '--ipAddr', help='Target IP address', type=str, required=True)
-parser.add_argument('-c', '--count', help='Count number', type=int, required=True)
-args = parser.parse_args()
 
 
-def ping_ip():
+def ping_ip(count, ipAddr):
     reply = subprocess.run(['ping', '-c', str(args.count), '-n', str(args.ipAddr)],
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE,
@@ -27,4 +23,8 @@ def ping_ip():
 
 
 if __name__ == "__main__":
-    ping_ip()
+    parser = argparse.ArgumentParser(description="Define IP address, ping count")
+    parser.add_argument('-i', '--ipAddr', help='Target IP address', type=str, required=True)
+    parser.add_argument('-c', '--count', help='Count number', type=int, required=True)
+    args = parser.parse_args()
+    ping_ip(str(args.count), str(args.ipAddr))
