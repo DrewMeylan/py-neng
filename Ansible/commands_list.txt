@@ -1,0 +1,6 @@
+ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+--key-file and -i inventory can be ignored with ansbile.cfq configured
+ansible all --list-hosts
+anislbe all -m gather-facts {--limit {IP Address}}
+
+
