@@ -1,6 +1,6 @@
 from netmiko import ConnectHandler
 
-with open('devices.txt') as routers
+with open('devices.txt') as routers:
     for IP in routers:
         Router = {
                 'device_type': 'cisco_ios',
