@@ -1,0 +1,19 @@
+---
+host1.cmh:
+  hostname: 127.0.0.1
+  port: 2201
+  username: drew
+  password: Pestee46412!@
+  platform: linux
+  groups:
+    - cmh
+  data:
+    site: cmh
+    role: host
+    type: host
+    nested_data:
+      a_dict:
+        a: 1
+        b: 2
+      a_list: [1, 2]
+      a_string: "asd"
