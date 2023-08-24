@@ -1,0 +1,14 @@
+## Directory Structure
+./run_list
+ -config.yaml
+ -inventory.d
+   -defaults.yaml
+   -groups.yaml
+   -hosts.yaml
+ -related_task1.py
+ -related_task2.py
+
+## Inventory
+ Hosts and Groups are nested dicitonaries defining membership and data wit hthe elements called by gosts/group name or iteration.
+
+ dict() is a spe

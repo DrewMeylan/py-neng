@@ -1,0 +1,14 @@
+## Nornir Config File
+---
+inventory:
+  plugin: SimpleInventory
+  options:
+    host_file: "~/Git/py-neng/nornir/inventory/hosts.yaml"
+    group_file: "~/Git/py-neng/nornir/inventory/groups.yaml"
+    defaults_file: "~/Git/py-neng/nornir/inventory/defaults.yaml"
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 100
+

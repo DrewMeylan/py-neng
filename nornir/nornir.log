@@ -1,0 +1,51 @@
+2023-08-24 13:42:09,113 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-08-24 13:42:09,115 - nornir.core.task -    ERROR -      start() - Host 'pop-os': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/drew/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "pop!_os 22.04 lts x86_64". Is the library installed?
+
+2023-08-24 13:42:34,501 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-08-24 13:42:34,502 - nornir.core.task -    ERROR -      start() - Host 'pop-os': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/drew/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "pop!_os 22.04 lts x86_64". Is the library installed?
+
+2023-08-24 13:43:20,574 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-08-24 13:43:20,575 - nornir.core.task -    ERROR -      start() - Host 'pop-os': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/drew/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/drew/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "pop!_os 22.04 lts x86_64". Is the library installed?
+
