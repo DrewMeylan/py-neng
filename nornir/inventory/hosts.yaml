@@ -1,10 +1,11 @@
 ---
-pop-os:
+pop-os.bma:
+  data:
+    site: CHS
   hostname: 127.0.0.1
   port: 2201
   username: drew
   password: Pestee46412!@
   platform: Pop!_OS 22.04 LTS x86_64
   groups:
-    - hosts
-  
+    - bma
