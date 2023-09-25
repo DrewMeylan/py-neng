@@ -1,5 +1,8 @@
 from netaddr import *
 
+delimiters = [":", "_", "."]
+hexChars = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+
 class mac_comware(mac_cisco): pass
 mac_comware.word_sep = '-'
 mac_comware.word_size = 16
@@ -8,7 +11,6 @@ class mac_procurve(mac_pgsql): pass
 mac_procurve.word_sep = '-'
 mac_procurve.word_size = 24
 
-hexChars = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
 
 def CheckMac(mac1):  #returns false if valid
     badMac=False
