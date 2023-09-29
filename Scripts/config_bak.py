@@ -29,5 +29,3 @@ logfile.write(showver)
 logifle.write("\n")
 
 net_connect.disconnect()
-
-
