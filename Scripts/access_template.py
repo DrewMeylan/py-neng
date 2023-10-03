@@ -15,6 +15,7 @@ parser.add_argument('-n', '--hostname', required=True, type=str)
 parser.add_argument('-i', '--ip', required=False, type=str) #False if DNS resolution is possible
 parser.add_argument('-t', '--template', required=True, type=str)
 parser.add_argument('-v', '--vlan(s)', required=True, type=str)
+parser.add_argument('-t', '--type', required=True, default='cisco_ios', type=str)  
 args = parser.parse_args()
 
 '''
@@ -22,11 +23,11 @@ device_settings {
     "device_type": "cisco_ios",
     "ip"
 }
-'''
 device = {**deivce}
-
+'''
 
 ## Access Template template definition
+###Class permutations? IDK
 use = [
     'swtichport mode access',
     f'switchport access vlan {arg2}',
@@ -43,6 +44,22 @@ unuse = [
 ]
 
 net_connect = ConnectHandler(**ip)
+
+def applyTemplate(ip, interface, template, vlans):
+    device_info = {
+        'device_type': f'{type}',
+        'host' = f'{hostname}.{domain}',
+        'username' = f'{username}',
+        'password' = f'{password}',
+            }
+    net_connect = ConnectHandler(**device_info)
+
+    #Connect to interface and apply template
+    net_connect.send_command(f"interface {interface}")
+    for cmd in template:
+        net_connect.send_command(cmd)
+        
+
 
 
 ## Push template config def to target(s)
