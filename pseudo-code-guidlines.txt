@@ -1,0 +1,96 @@
+    Start with a Clear Objective: 
+    
+Begin by specifying the overall goal or objective of the script. What do you want the
+script to accomplish in terms of network monitoring or automation? Clearly state the
+problem you want to solve.
+
+    Define Input and Output: 
+
+Describe the input data or parameters the script needs to function correctly. Specify
+how the script will receive this input, whether it's through command-line arguments, 
+user prompts, configuration files, or any other method. Also, define the expected 
+output or results.
+
+    Break Down the Logic:
+
+Divide the script's logic into clear and manageable steps. Use pseudocode comments 
+or headings to outline each major section of the script. Describe the operations, 
+conditions, or loops that need to be performed within each section.
+
+    Use Descriptive Variable Names: 
+    
+If you need to reference variables or data structures, use clear and descriptive
+names. This helps in understanding the purpose of each variable and makes the code
+more readable.
+
+    Include Error Handling:
+    
+Consider potential errors or exceptions that might occur during script execution.
+Describe how the script should handle these errors, whether it's by displaying an 
+error message, logging the issue, or taking corrective actions.
+
+    Specify Dependencies:
+
+If the script relies on external libraries or modules, mention them explicitly. 
+Indicate any installation or configuration steps required for these dependencies.
+
+    Consider Efficiency: 
+
+If performance is a concern, describe any optimization techniques or considerations 
+to make the script more efficient, especially for network monitoring tasks.
+
+    Document Functionality:
+
+Include comments or explanations for critical parts of the code. This helps others 
+(and yourself) understand the script's functionality and purpose.
+
+Security and Authentication:
+
+If the script interacts with sensitive systems or requires authentication, 
+outline how this should be handled securely. Avoid hardcoding sensitive credentials 
+in the script.
+
+    Testing and Verification: 
+
+Describe how the script's functionality can be tested and verified. Specify sample 
+inputs or scenarios for testing and expected outcomes.
+
+
+
+---------------------------------------- EXAMPLE GIVEN ----------------------------
+
+# Objective: Monitor the availability of a list of hosts and log results.
+# Input: List of hosts to monitor, log file path
+# Output: Log file with monitoring results
+
+# Import necessary libraries
+import datetime
+import socket
+
+# Define input parameters
+hosts_to_monitor = ["example.com", "192.168.1.1"]
+log_file_path = "monitoring_log.txt"
+
+# Open log file for writing
+log_file = open(log_file_path, "a")
+
+# Loop through each host and check availability
+for host in hosts_to_monitor:
+    try:
+        # Get current timestamp
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Perform a DNS lookup to resolve the host
+        ip_address = socket.gethostbyname(host)
+        
+        # Log the result
+        log_entry = f"{timestamp} - {host} is available at IP: {ip_address}\n"
+        log_file.write(log_entry)
+        
+    except Exception as e:
+        # Handle errors and log them
+        error_message = f"{timestamp} - Error: {str(e)} for {host}\n"
+        log_file.write(error_message)
+
+# Close the log file
+log_file.close()

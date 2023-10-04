@@ -13,9 +13,9 @@ net_connect = ConnectHandler(**CSR)
 hostname = net_connect.send_command('show run | include host')
 hostname.split(" ")
 hostname, device = hostname.split()
-print("Backing up " + device)
+print(f'Backing up {device}')
 
-filename = "$HOME/Git/py-neng/backups/" + device + ".txt"
+filename = f'$HOME/Git/py-neng/backups/{device}.txt'
 
 showrun = net_connect.send_command("show run")
 showvlan = net_connect.send_command("show vlan")
