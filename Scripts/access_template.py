@@ -48,9 +48,9 @@ net_connect = ConnectHandler(**ip)
 def applyTemplate(ip, interface, template, vlans):
     device_info = {
         'device_type': f'{type}',
-        'host' = f'{hostname}.{domain}',
-        'username' = f'{username}',
-        'password' = f'{password}',
+        'host': f'{hostname}.{domain}',
+        'username': f'{username}',
+        'password': f'{password}',
             }
     net_connect = ConnectHandler(**device_info)
 
@@ -66,4 +66,5 @@ def applyTemplate(ip, interface, template, vlans):
 print('\n'.join(access_template).format(5))
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
+

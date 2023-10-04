@@ -6,30 +6,6 @@ class generic_mac(mac):
     def __init__(self, formatType):
         self.format = formatType
 
-    @classmethod
-    def to_cisco():
-
-    @classmethod 
-    def to_unixExpanded
-
-    @classmethod
-    def to_unix
-
-    @classmethod
-    def to_bare
-
-    @classmethod
-    def to_pgsql
-
-    @classmethod
-    def to_eui
-
-    @classmethod
-    def to_comware
-
-    @classmethod
-    def to_procurve
-
 #class mac_comware(mac_cisco): pass
 #mac_comware.word_sep = '-'
 #mac_comware.word_size = 16
@@ -41,7 +17,7 @@ class generic_mac(mac):
 
 def CheckMac(mac1):  #returns false if valid
     badMac=False
-    mac2=mac1.translate(str.maketrans('', '',  '-:_'))  #strips normal chars
+    mac2=mac1.translate(str.maketrans('', '',  '-:_.'))  #strips normal chars
     if len(mac2) < 12:
         badMac=True
     for i in mac2.lower():
