@@ -6,11 +6,9 @@ from cryptography.fernet import Fernet
 '''
 Meta-class definitions
 '''
-class IterRegistry(type):
-    def __iter_(cls):
+class metaDevice(type):
+    def __iter__(self):
         return iter(cls._registry)
-
-
 
 '''
 Parent Class Definition

@@ -44,11 +44,6 @@ def applyTemplate(ip, interface, template, vlans):
 ## Push template config def to target(s)
 print('\n'.join(access_template).format(5))
 
-
-
-
-
-
 '''
 IF NAME == MAIN
 '''
