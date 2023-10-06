@@ -45,6 +45,14 @@ def applyTemplate(ip, interface, template, vlans):
 print('\n'.join(access_template).format(5))
 
 
+
+
+
+
+'''
+IF NAME == MAIN
+'''
+
 if __name__ == '__main__':.
 # Define device information from provided paramters
 device_info {
