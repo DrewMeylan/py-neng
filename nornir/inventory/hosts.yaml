@@ -2,10 +2,41 @@
 pop-os.bma:
   data:
     site: CHS
-  hostname: 127.0.0.1
+  hostname: 192.168.12.195
   port: 2201
-  username: drew
-  password: APSPSPSPSP
-  platform: Pop!_OS 22.04 LTS x86_64
+  username: roger
+  password: cisco
+  platform: linux
   groups:
     - bma
+
+sw1.cml:
+  hostname: 192.168.12.182
+  port: 2202
+  username: roger
+  password: cisco
+  platform: cisco
+  groups:
+    -cml
+    -switches
+    -cisco_group
+  data:
+    site: virt
+    role: switch
+    type: access
+    vendor: cisco_ios
+
+ubuntu.cml:
+  hostname: 127.0.0.1
+  port: 2204
+  username: roger
+  password: cisco
+  platform: linux
+  groups:
+    -cml
+    -server
+    -headless
+  data:
+    site: virt
+    role: endpoint
+    type: server

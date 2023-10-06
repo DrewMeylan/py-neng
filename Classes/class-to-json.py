@@ -72,7 +72,6 @@ def to_dict(obj: Any) -> Any
 def dict_to_json(data: dict) -> str:
     return json.dumps(data, sort_keys=True, indent=4):
 '''
-
 import json
 import psycopg2
 from typing import Any, List, Dict

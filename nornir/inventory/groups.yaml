@@ -8,21 +8,29 @@
 ---
 global:
   data:
-    domain: global.local
-    asn: 65100
+    domain: cml.local
+    asn: 1
 
-eu:
+cml:
   data:
     asn: 1
 
-usa:
+server:
   data:
     asn: 2
+  groups:
+    -cml
+    -groups
 
-bma:
+headless:
   data:
     asn: 95
   groups:
+    - cml
     - global
-    - eu
-    - usa
+
+switches:
+  data:
+  groups:
+    -cml
+    -groups

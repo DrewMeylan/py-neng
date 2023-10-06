@@ -13,6 +13,7 @@ def pushTemplate(devicefile, template):
             hostname = target.send_command("show run | i host").split(" ")
             hostname.split(" ")
             hostname, device = hostname.split(" ")
+            interfaces = target.send_command("show interface status").split() #?
             with open(template) as temp:
                 for line in temp.split("\n"):
                     target.send_command(line)
