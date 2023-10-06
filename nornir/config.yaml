@@ -1,11 +1,10 @@
 ## Nornir Config File
 ---
 inventory:
-  plugin: SimpleInventory
+  plugin: NetBoxInventory2
   options:
-    host_file: "~/Git/py-neng/nornir/inventory/hosts.yaml"
-    group_file: "~/Git/py-neng/nornir/inventory/groups.yaml"
-    defaults_file: "~/Git/py-neng/nornir/inventory/defaults.yaml"
+    api_endpoint: https://netbox.local:8000
+    api_token: "123456"
 
 runner:
   plugin: threaded
