@@ -49,3 +49,178 @@ Traceback (most recent call last):
     raise ModuleImportError(
 napalm.base.exceptions.ModuleImportError: Cannot import "pop!_os 22.04 lts x86_64". Is the library installed?
 
+2023-10-08 21:00:41,701 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:00:41,703 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-10-08 21:01:45,713 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:01:45,713 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco". Is the library installed?
+
+2023-10-08 21:03:15,200 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:03:15,207 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 2202 on 192.168.12.182
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 462, in __init__
+    self._open()
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1126, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.12.182:2202
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.12.182
+
+2023-10-08 21:21:27,768 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:21:27,769 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 70, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-08 21:21:52,620 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:21:52,620 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 70, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-08 21:22:18,509 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:22:18,510 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 70, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-08 21:29:14,946 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:29:14,946 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 70, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-08 21:30:46,918 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 21:30:46,919 - nornir.core.task -    ERROR -      start() - Host 'sw1.cml': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/kidscripto/.local/lib/python3.10/site-packages/napalm/base/__init__.py", line 70, in get_network_driver
+    raise ModuleImportError("Please provide a valid driver name.")
+napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
+
+2023-10-08 21:32:11,707 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 22:54:41,395 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 22:54:48,943 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-10-08 23:19:11,252 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts

@@ -1,2 +1,4 @@
-#Defaults
+#defaults.yaml
 ---
+username: roger
+password: cisco

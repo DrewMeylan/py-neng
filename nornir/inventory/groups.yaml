@@ -1,36 +1,7 @@
-# groups
-#   Note on inheritance from a group
-#    1. If the group field has the data field specifically defined, use that
-#    2. If not, check the groups parent groups iteratively until a match is made
-#      e.g., bma domain information will be defined by the global group if that
-#      group has a domain value. Otherwise, it will check the eu group, and so on.
-#      If nothing is found, default.yaml will be checked as last resort
+# groups.yaml
 ---
-global:
-  data:
-    domain: cml.local
-    asn: 1
+iosxr:
+  platform: 'iosxr'
 
-cml:
-  data:
-    asn: 1
-
-server:
-  data:
-    asn: 2
-  groups:
-    -cml
-    -groups
-
-headless:
-  data:
-    asn: 95
-  groups:
-    - cml
-    - global
-
-switches:
-  data:
-  groups:
-    -cml
-    -groups
+ios:
+  platform: 'ios'

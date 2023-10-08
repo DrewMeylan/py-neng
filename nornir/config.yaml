@@ -1,10 +1,17 @@
-## Nornir Config File
+# config.yaml
 ---
 inventory:
-  plugin: NetBoxInventory2
+  plugin: SimpleInventory
   options:
-    api_endpoint: https://192.168.12.114:8000
-    api_token: "52acfb140685c3eeefe7d31038823cf52c5b4dfb"
+    host_file: '/home/kidscripto/Git/py-neng/nornir/inventory/hosts.yaml'
+    group_file: '/home/kidscripto/Git/py-neng/nornir/inventory/groups.yaml'
+    defaults_file: '/home/kidscripto/Git/py-neng/nornir/inventory/defaults.yaml'
+
+#inventory:
+#  plugin: NetBoxInventory2
+#  options:
+#    api_endpoint: "https://netbox.local:8000"
+#    api_token: "f4e08aa5000e71f705e680e5add8f862bd187290"
 
 runner:
   plugin: threaded
