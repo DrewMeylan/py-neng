@@ -3,8 +3,8 @@
 inventory:
   plugin: NetBoxInventory2
   options:
-    api_endpoint: https://netbox.local:8000
-    api_token: "123456"
+    api_endpoint: https://192.168.12.114:8000
+    api_token: "52acfb140685c3eeefe7d31038823cf52c5b4dfb"
 
 runner:
   plugin: threaded
