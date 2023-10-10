@@ -23,6 +23,8 @@ def query_dns(hostpath) -> dict:
 Compare DNS func
 '''
 
+TEST!!!
+
 #@query_dns
 #def compare_dns() -> dict:
 #    ''' Takes dict of hostname:IP and compares against NetBox'''
