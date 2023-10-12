@@ -4,9 +4,14 @@ from socket import gethostbyname_ex as gethost
 import sys
 
 '''
-Pattern def and sifter standalone func
+Pattern def and standalone functions
 '''
 ip_pattern = re.compile(r'\d+\.\d+\.\d+\.\d+')
+
+def read_hosts_file(file_path):
+    with open(file_path, 'r') as file:
+        hostnames = [line.strip() for line in file]
+    return hostnames
 
 def sifter(pattern):  ## Takes in a string and generates a function to serve as a regex filter to match the passed string
     ''' Sifter function takes in a regex pattern and returns filter_text function  '''
@@ -22,13 +27,35 @@ def sifter(pattern):  ## Takes in a string and generates a function to serve as 
 '''
 Decorators for extensibility: handle different inputs types to construct list for Query function
 '''
-def sysargs(func): ### Take in sysargs and pass them directly to the decorated query function as a list
-    def sysarg_query(*args) -> list:
-        '''Sysarg_query takes in system arguments as a list and passes this list to the decorated query function'''
-        func(*args) ## sys.argv is of type list; can be passed straight through to decorated query function
-    return sysarg_query # Returns function, not a list?
+def sysargs(func):  ## Should be good to go
+    def sysarg_query(*args, **kwargs):
+        # Get command line arguments (excluding the script name)
+        cmd_args = sys.argv[1:]
+        # Pass the command line arguments to the wrapped function
+        return func(cmd_args)
+    return sysarg_query
 
-def filepath(func, sift_string:str=None):  ## Take in the query function and a sifter, which can be used to filter the 
+def hostname_filter_decorator(hosts_file, filter_pattern=None):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            # Read hostnames from the file
+            hostnames = read_hosts_file(hosts_file)
+
+            # Apply filtering if a filter pattern is provided
+            if filter_pattern:
+                filtered_hostnames = [host for host in hostnames if re.search(filter_pattern, host)]
+            else:
+                filtered_hostnames = hostnames
+
+            # Pass the filtered hostnames to the decorated function
+            return func(*args, filtered_hostnames, **kwargs)
+
+        return wrapper
+    return decorator
+
+
+'''
+def filepath(func, sift_string:str -> None):  ## Take in the query function and a sifter, which can be used to filter the 
     def file_query(filepath:str) -> list:
         hostlist = []
         with open(filepath) as hosts:
@@ -42,23 +69,20 @@ def filepath(func, sift_string:str=None):  ## Take in the query function and a s
             else:
                 func(hostlist)
     return file_query
-
+'''
 
 '''
 Query Function --> Construct dictionary from hostname list to compare against netbox
 '''
-def query(host:list) -> dict:
-    ''' Takes in a list of hostnames outputs a dict with each hostname and corresponding IP'''
-    dns_results = {} 
-    with open(*args) as hosts:  ### Export file context management to decorator
-        for host in hosts:
-            host = host.rstrip()  ## rstrip should become redundant with decorators
-            try:
-                response = str(socket.gethostbyname_ex(host))
-                ip = re.findall(ip_pattern, response)
-                dns_results[host] = ip
-            except:
-                dns_results[host] = "Null"
+def query(args): ## Works with sysargs decorator
+    dns_results = {}
+    for host in args:
+        try:
+            response = str(socket.gethostbyname_ex(host))
+            ip = re.findall(ip_pattern, response)
+            dns_results[host] = ip
+        except:
+            dns_results[host] = "Null"
     return dns_results
 
 
@@ -72,14 +96,3 @@ Compare Function --> Checks dictionary values against netbox and returns an arra
 '''
 
 '''
-
-def main():
-    if len(sys.argv >= 1):
-        args = sys.argv
-        sysarg_query(sys.argv)
-        pass
-    if 
-
-if __name__ == "__main__":
-    main()
-    exit(1)
