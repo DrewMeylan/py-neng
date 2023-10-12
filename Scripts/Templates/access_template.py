@@ -19,7 +19,6 @@ used_template = [
     'spanning-tree portfast',
     'spanning-tree bpduguard enable'
 ]
-
 unused_template = [
     'switchport mode access',  #Manually define access mode
     f'switchport access vlan {SOMETHING}', #Move to unusued vlan
@@ -44,9 +43,6 @@ def applyTemplate(ip, interface, template, vlans):
 ## Push template config def to target(s)
 print('\n'.join(access_template).format(5))
 
-'''
-IF NAME == MAIN
-'''
 
 if __name__ == '__main__':.
 # Define device information from provided paramters

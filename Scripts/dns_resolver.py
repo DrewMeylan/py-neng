@@ -13,8 +13,8 @@ def read_hosts_file(file_path):
         hostnames = [line.strip() for line in file]
     return hostnames
 
-def sifter(pattern):  ## Takes in a string and generates a function to serve as a regex filter to match the passed string
-    ''' Sifter function takes in a regex pattern and returns filter_text function  '''
+def sifter(pattern):  ## Takes in a string and generates a function to serve as a regex filter to match the passed stringclear
+    ''' Sifter function takes in a regex pattern and returns filter_text function. '''
     try:
         regex = re.compile(pattern)
         def filter_text(text):
@@ -28,6 +28,9 @@ def sifter(pattern):  ## Takes in a string and generates a function to serve as 
 Decorators for extensibility: handle different inputs types to construct list for Query function
 '''
 def sysargs(func):  ## Should be good to go
+  ''' This is a decorator function that is meant to read in system arguments and pass them off to an arbitrary function.
+    The point of this to be able to modify the means by which the decorated function receives input. 
+  '''
     def sysarg_query(*args, **kwargs):
         # Get command line arguments (excluding the script name)
         cmd_args = sys.argv[1:]
@@ -53,27 +56,10 @@ def hostname_filter_decorator(hosts_file, filter_pattern=None):
         return wrapper
     return decorator
 
-
-'''
-def filepath(func, sift_string:str -> None):  ## Take in the query function and a sifter, which can be used to filter the 
-    def file_query(filepath:str) -> list:
-        hostlist = []
-        with open(filepath) as hosts:
-            for host in hosts:
-                hostlist.append(str(host).rstrip())
-            
-            if sift_string:
-                inner_filter = sifter(sift_string)
-                filtered_hosts = inner_filter(" ".join(hostlist))
-                func(filtered_hosts)
-            else:
-                func(hostlist)
-    return file_query
-'''
-
 '''
 Query Function --> Construct dictionary from hostname list to compare against netbox
 '''
+
 def query(args): ## Works with sysargs decorator
     dns_results = {}
     for host in args:

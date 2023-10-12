@@ -29,7 +29,7 @@ def hostname_filter_decorator(hosts_file, filter_pattern=None):
     return decorator
 
 # Example usage:
-@hostname_filter_decorator('hosts.txt', filter_pattern=) # Find way to pass command line arguement or argparse arguement to filter_pattern 
+@hostname_filter_decorator('hosts.txt') # Find way to pass command line arguement or argparse arguement to filter_pattern 
 def query(args): ## Works with sysargs decorator
     dns_results = {}
     for host in args:

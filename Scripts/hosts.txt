@@ -1,7 +1,5 @@
-www.google.com
-www.reddit.com
-www.heroforge.com
-scuttlebutt
 C5MAINDOWN
 C6NORTHWS09
 C6NORTHDOWN
+C3MAINDOWN
+C3NORTHDOWN
