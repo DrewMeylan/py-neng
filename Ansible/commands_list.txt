@@ -1,8 +1,0 @@
-ansible all --key-file ~/.ssh/ansible -i inventory -m ping
---key-file and -i inventory can be ignored with ansbile.cfq configured
-ansible all --list-hosts
-anislbe all -m gather-facts {--limit {IP Address}}
-#Elevation
-ansible all -m apt -a update_cache=true --become --ask-become-pass
-  >> asks for become password, which is essentially the sudo password
-
