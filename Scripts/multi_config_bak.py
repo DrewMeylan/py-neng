@@ -13,7 +13,7 @@ with open('devices.txt') as routers:
         hostname = net_connect.send_command('show run | include host')
         hostname.split(" ")
         hostname,device = hostname.split(" ")
-        print("Backing up " + deivce)
+        print("Backing up " + device)
 
         filename = "$HOME/Git/py-neng/backups/" + device + ".txt"
 
