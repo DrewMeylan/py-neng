@@ -8,13 +8,17 @@ class xmlStruct:
     def __inti__(self, structType: str, struct: str):
         self.structType = "xml"
         self.struct = struct
-        self.elements = element_counter(self, struct) # number of discrete elements
-        self.tree_depth = tree_depth(self, struct) # Maxmimum discrete element depth
-        self.attributes = contains_attributes(self, struct) # Does the structure implement attributes
-        self.namespacing = uses_namespaces(self, struct) # Does the structure implement namespacing
+        self.elements = self.element_counter(self, struct) # number of discrete elements
+        self.tree_depth = self.tree_depth(self, struct) # Maxmimum discrete element depth
+        self.attributes = self.contains_attributes(self, struct) # Does the structure implement attributes
+        self.namespacing = self.uses_namespaces(self, struct) # Does the structure implement namespacing
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.type} field containing {self.elements} discrete elements'
+
+    def __repr__(self) -> str:
+        return f'{type(self)}.__name__'
+
 
     
     # Methods
@@ -28,8 +32,8 @@ class xmlStruct:
                 count = 0
                 for child in element:
                     count += count_recursively(child)
-                return count
-        
+            return count
+            
         return count_recursively(root)
     
     def tree_depth(self, struct):
